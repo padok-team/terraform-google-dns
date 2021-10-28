@@ -19,13 +19,12 @@ variable "public" {
   default     = true
 }
 
-
 variable "records" {
-  type      = map(object({
-      name = string
-      type = string
-      rrdatas = list(string)
-      ttl = number
+  type = map(object({
+    name    = string
+    type    = string
+    rrdatas = list(string)
+    ttl     = number
   }))
   description = "List of your DNS records"
 }
