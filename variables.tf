@@ -1,20 +1,28 @@
-variable "example_of_required_variable" {
+variable "fqdn" {
   type        = string
-  description = "Short description of the variable"
-}
-
-variable "example_of_variable_with_default_value" {
-  type        = string
-  description = "Short description of the variable"
-  default     = "default_value"
-}
-
-variable "example_with_validation" {
-  type        = list(string)
-  description = "Short description of the variable"
+  description = "The Full Qualified Domain Name of your DNS zone"
 
   validation {
-    condition     = length(var.example_with_validation) >= 2
-    error_message = "Error message which explains what's required and finished with a dot ."
+    condition     = can(regex("^(?!:\/\/)(?=.{1,255}$)((.{1,63}\.){1,127}(?![0-9]*$)[a-z0-9-]+\.?)$", var.fqdn))
+    error_message = "Error: your fqdn input is not valid"
   }
+}
+
+variable "public" {
+  type        = bool
+  description = "Visibility of your zone"
+  default     = true
+}
+
+variable "records" {
+  type        = map(object({
+      name = string
+      type = string
+      value = string
+      priority = optional(number)
+      ttl = number
+      flags = optional(number)
+      tag = optional(string)
+  }))
+  description = "List of your DNS records"
 }
