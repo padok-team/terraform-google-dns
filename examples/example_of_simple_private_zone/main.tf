@@ -6,7 +6,7 @@ provider "google" {
   zone    = "europe-west1-b"
 }
 
-module "simple_public_zone" {
+module "simple_private_zone" {
   source = "../.."
   name  = "padok-simple-private-zone"
   fqdn  = "test.library.padok.fr."
