@@ -1,6 +1,6 @@
 # CLOUD_PROVIDER TYPE Terraform module
 
-Terraform module which creates **TYPE** resources on **CLOUD_PROVIDER**. This module is an abstraction of the [MODULE_NAME](https://github.com/a_great_module) by [@someoneverysmart](https://github.com/someoneverysmart).
+Terraform module which creates **DNS** resources on **Google Cloud Provider**. This module is an abstraction of the [MODULE_NAME](https://github.com/a_great_module) by [@someoneverysmart](https://github.com/someoneverysmart).
 
 ## User Stories for this module
 
