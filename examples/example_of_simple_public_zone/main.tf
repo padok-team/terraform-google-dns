@@ -1,4 +1,4 @@
-# Short description of the use case in comments
+# Basic DNS configuration with a public zone and a set of common types of records
 
 provider "google" {
   project = "padok-cloud-factory"
