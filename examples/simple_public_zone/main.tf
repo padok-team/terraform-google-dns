@@ -10,7 +10,6 @@ module "simple_public_zone" {
   source = "../.."
   name   = "padok-simple-public-zone"
   fqdn   = "test.library.padok.fr."
-  public = true
   records = {
     "rec1" = {
       name    = "www"
