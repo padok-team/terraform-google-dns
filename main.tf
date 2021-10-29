@@ -1,6 +1,21 @@
-# Here you can reference 2 type of terraform objects :
-# 1. Ressources from you provider of choice
-# 2. Modules from official repositories which include modules from the following github organizations
-#     - AWS: https://github.com/terraform-aws-modules
-#     - GCP: https://github.com/terraform-google-modules
-#     - Azure: https://github.com/Azure
+# Create Domain
+resource "google_dns_managed_zone" "main_zone" {
+  name     = var.name
+  dns_name = var.fqdn
+
+  visibility = var.public ? "public" : "private"
+}
+
+# Create DNS records
+resource "google_dns_record_set" "main_records" {
+  for_each = var.records
+
+  # Required
+  managed_zone = google_dns_managed_zone.main_zone.name
+  name         = each.value.name != "" ? "${each.value.name}.${google_dns_managed_zone.main_zone.dns_name}" : "${google_dns_managed_zone.main_zone.dns_name}"
+  type         = each.value.type
+  rrdatas      = each.value.rrdatas
+
+  # Optionnal
+  ttl = each.value.ttl
+}

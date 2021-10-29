@@ -1,9 +1,9 @@
 output "zone_id" {
   description = "ID of the deployed DNS zone"
-  value       = google_dns_managed_zone.main_zone.id
+  value       = module.simple_public_zone.zone_id
 }
 
 output "project" {
   description = "Project of the deployed DNS zone"
-  value       = google_dns_managed_zone.main_zone.project
+  value       = module.simple_public_zone.project
 }

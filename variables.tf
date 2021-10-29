@@ -1,20 +1,30 @@
-variable "example_of_required_variable" {
+variable "name" {
   type        = string
-  description = "Short description of the variable"
+  description = "Name of your DNS zone"
 }
 
-variable "example_of_variable_with_default_value" {
+variable "fqdn" {
   type        = string
-  description = "Short description of the variable"
-  default     = "default_value"
-}
-
-variable "example_with_validation" {
-  type        = list(string)
-  description = "Short description of the variable"
+  description = "The Full Qualified Domain Name of your DNS zone"
 
   validation {
-    condition     = length(var.example_with_validation) >= 2
-    error_message = "Error message which explains what's required and finished with a dot ."
+    condition     = can(regex("^([a-zA-Z0-9. _-])+\\.+$", var.fqdn))
+    error_message = "Error: your FQDN input is invalid. Please check you didn't forgot the final '.' at the end."
   }
+}
+
+variable "public" {
+  type        = bool
+  description = "Visibility of your zone"
+  default     = true
+}
+
+variable "records" {
+  type = map(object({
+    name    = string
+    type    = string
+    rrdatas = list(string)
+    ttl     = number
+  }))
+  description = "List of your DNS records"
 }
