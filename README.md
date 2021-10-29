@@ -47,8 +47,8 @@ module "simple_public_zone" {
 
 ## Examples
 
-- [Example of simple public zone](examples/example_of_simple_public_zone/main.tf)
-- [Example of simple private zone](examples/example_of_private_public_zone/main.tf)
+- [Example of simple public zone](examples/simple_public_zone/main.tf)
+- [Example of simple private zone](examples/simple_private_zone/main.tf)
 
 <!-- BEGIN_TF_DOCS -->
 ## Modules
