@@ -8,8 +8,8 @@ variable "fqdn" {
   description = "The Full Qualified Domain Name of your DNS zone"
 
   validation {
-    condition     = can(regex("^([a-zA-Z0-9. _-])+\\.?$", var.fqdn))
-    error_message = "Error: your FQDN input is invalid."
+    condition     = can(regex("^([a-zA-Z0-9. _-])+\\.+$", var.fqdn))
+    error_message = "Error: your FQDN input is invalid. Please check you didn't forgot the final '.' at the end."
   }
 }
 
