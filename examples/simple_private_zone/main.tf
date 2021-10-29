@@ -19,9 +19,9 @@ module "simple_private_zone" {
       ttl     = 60
     }
     "rec2" = {
-      name    = ""
-      type    = "A"
-      rrdatas = ["35.189.202.112"]
+      name    = "sql"
+      type    = "CNAME"
+      rrdatas = ["pf2-mysql.online.net."]
       ttl     = 60
     }
     "rec3" = {
