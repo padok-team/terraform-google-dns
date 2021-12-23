@@ -1,6 +1,7 @@
 # Google Cloud DNS Terraform module
 
 Terraform module which creates **DNS** resources on **Google Cloud Provider**.
+You can determine if it will be public or private and a list of your DNS records.
 
 ## User Stories for this module
 

@@ -1,11 +1,11 @@
 variable "name" {
   type        = string
-  description = "Name of your DNS zone"
+  description = "Name of your DNS zone."
 }
 
 variable "fqdn" {
   type        = string
-  description = "The Full Qualified Domain Name of your DNS zone"
+  description = "The Full Qualified Domain Name of your DNS zone."
 
   validation {
     condition     = can(regex("^([a-zA-Z0-9. _-])+\\.+$", var.fqdn))
@@ -15,7 +15,7 @@ variable "fqdn" {
 
 variable "public" {
   type        = bool
-  description = "Visibility of your zone"
+  description = "Visibility of your zone."
   default     = true
 }
 
@@ -26,5 +26,5 @@ variable "records" {
     rrdatas = list(string)
     ttl     = number
   }))
-  description = "List of your DNS records"
+  description = "List of your DNS records."
 }
