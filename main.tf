@@ -1,5 +1,5 @@
 # Create Domain
-resource "google_dns_managed_zone" "main_zone" {
+resource "google_dns_managed_zone" "this" {
   name     = var.name
   dns_name = var.fqdn
 
@@ -7,12 +7,12 @@ resource "google_dns_managed_zone" "main_zone" {
 }
 
 # Create DNS records
-resource "google_dns_record_set" "main_records" {
+resource "google_dns_record_set" "this" {
   for_each = var.records
 
   # Required
-  managed_zone = google_dns_managed_zone.main_zone.name
-  name         = each.value.name != "" ? "${each.value.name}.${google_dns_managed_zone.main_zone.dns_name}" : "${google_dns_managed_zone.main_zone.dns_name}"
+  managed_zone = google_dns_managed_zone.this.name
+  name         = each.value.name != "" ? "${each.value.name}.${google_dns_managed_zone.this.dns_name}" : "${google_dns_managed_zone.this.dns_name}"
   type         = each.value.type
   rrdatas      = each.value.rrdatas
 

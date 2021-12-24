@@ -1,4 +1,4 @@
-# Google Cloud DNS Terraform module
+# Google DNS Terraform module
 
 Terraform module which creates **DNS** resources on **Google Cloud Provider**.
 You can determine if it will be public or private and a list of your DNS records.
@@ -13,7 +13,7 @@ You can determine if it will be public or private and a list of your DNS records
 
 ```hcl
 module "simple_public_zone" {
-  source = "../.."
+  source = "git@github.com:padok-team/terraform-google-dns.git?ref=1.0.0"
   name   = "padok-simple-public-zone"
   fqdn   = "test.library.padok.fr."
   public = true
@@ -31,8 +31,8 @@ module "simple_public_zone" {
       ttl     = 60
     }
     "rec3" = {
-      name = ""
-      type = "MX"
+      name    = ""
+      type    = "MX"
       rrdatas = [
         "1 aspmx.l.google.com.",
         "5 alt1.aspmx.l.google.com.",
@@ -60,15 +60,15 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_fqdn"></a> [fqdn](#input\_fqdn) | The Full Qualified Domain Name of your DNS zone | `string` | n/a | yes |
-| <a name="input_name"></a> [name](#input\_name) | Name of your DNS zone | `string` | n/a | yes |
-| <a name="input_records"></a> [records](#input\_records) | List of your DNS records | <pre>map(object({<br>    name    = string<br>    type    = string<br>    rrdatas = list(string)<br>    ttl     = number<br>  }))</pre> | n/a | yes |
-| <a name="input_public"></a> [public](#input\_public) | Visibility of your zone | `bool` | `true` | no |
+| <a name="input_fqdn"></a> [fqdn](#input\_fqdn) | The Full Qualified Domain Name of your DNS zone. | `string` | n/a | yes |
+| <a name="input_name"></a> [name](#input\_name) | Name of your DNS zone. | `string` | n/a | yes |
+| <a name="input_records"></a> [records](#input\_records) | List of your DNS records. | <pre>map(object({<br>    name    = string<br>    type    = string<br>    rrdatas = list(string)<br>    ttl     = number<br>  }))</pre> | n/a | yes |
+| <a name="input_public"></a> [public](#input\_public) | Visibility of your zone. | `bool` | `true` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| <a name="output_project"></a> [project](#output\_project) | Project of the deployed DNS zone |
-| <a name="output_zone_id"></a> [zone\_id](#output\_zone\_id) | ID of the deployed DNS zone |
+| <a name="output_project"></a> [project](#output\_project) | Project of the deployed DNS zone. |
+| <a name="output_zone_id"></a> [zone\_id](#output\_zone\_id) | ID of the deployed DNS zone. |
 <!-- END_TF_DOCS -->
