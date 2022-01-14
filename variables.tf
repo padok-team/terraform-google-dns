@@ -9,7 +9,7 @@ variable "fqdn" {
 
   validation {
     condition     = can(regex("^([a-zA-Z0-9. _-])+\\.+$", var.fqdn))
-    error_message = "Error: your FQDN input is invalid. Please check you didn't forgot the final '.' at the end."
+    error_message = "Error: your FQDN input is invalid. Please check you didn't forget the final '.' at the end."
   }
 }
 

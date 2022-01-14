@@ -69,6 +69,5 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_project"></a> [project](#output\_project) | Project of the deployed DNS zone. |
 | <a name="output_zone_id"></a> [zone\_id](#output\_zone\_id) | ID of the deployed DNS zone. |
 <!-- END_TF_DOCS -->
