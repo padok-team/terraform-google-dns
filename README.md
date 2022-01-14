@@ -5,9 +5,8 @@ You can determine if it will be public or private and a list of your DNS records
 
 ## User Stories for this module
 
-- AAOps I want to get my own DNS using Cloud DNS
-- AAOps I want to be able to list all my DNS records and set them
-- AAOPS I want to create a private DNS zone
+- AAOps I need to be able to list all my DNS records and set them
+- AAOps I need to create a public or private DNS zone
 
 ## Usage
 
