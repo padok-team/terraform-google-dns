@@ -6,6 +6,7 @@ repos:
       - id: commitizen
         stages:
           - commit-msg
+
   - repo: https://github.com/antonbabenko/pre-commit-terraform
     rev: v1.62.3
     hooks:
@@ -19,7 +20,6 @@ repos:
     rev: v4.1.0
     hooks:
       - id: check-added-large-files
-      - id: end-of-file-fixer
       - id: forbid-new-submodules
       - id: trailing-whitespace
       - id: end-of-file-fixer
