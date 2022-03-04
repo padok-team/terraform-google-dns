@@ -5,8 +5,9 @@ You can determine if it will be public or private and a list of your DNS records
 
 ## User Stories for this module
 
-- AAOps I need to be able to list all my DNS records and set them
-- AAOps I need to create a public or private DNS zone
+- AAOps I am able to list all my DNS records and set them
+- AAOps I can create a public or private DNS zone
+- AAOps I can create a DNS zone and record separatly
 
 ## Usage
 
@@ -49,6 +50,7 @@ module "simple_public_zone" {
 
 - [Example of simple public zone](examples/simple_public_zone/main.tf)
 - [Example of simple private zone](examples/simple_private_zone/main.tf)
+- [Example of public zone and record created separatly](examples/separated_zone_record/main.tf)
 
 <!-- BEGIN_TF_DOCS -->
 ## Modules
@@ -59,10 +61,10 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_fqdn"></a> [fqdn](#input\_fqdn) | The Full Qualified Domain Name of your DNS zone. | `string` | n/a | yes |
 | <a name="input_name"></a> [name](#input\_name) | Name of your DNS zone. | `string` | n/a | yes |
-| <a name="input_records"></a> [records](#input\_records) | List of your DNS records. | <pre>map(object({<br>    name    = string<br>    type    = string<br>    rrdatas = list(string)<br>    ttl     = number<br>  }))</pre> | n/a | yes |
+| <a name="input_fqdn"></a> [fqdn](#input\_fqdn) | The Full Qualified Domain Name of your DNS zone. If not provided implies that the zone already exist. | `string` | `""` | no |
 | <a name="input_public"></a> [public](#input\_public) | Visibility of your zone. | `bool` | `true` | no |
+| <a name="input_records"></a> [records](#input\_records) | List of your DNS records. | <pre>map(object({<br>    name    = string<br>    type    = string<br>    rrdatas = list(string)<br>    ttl     = number<br>  }))</pre> | `{}` | no |
 
 ## Outputs
 

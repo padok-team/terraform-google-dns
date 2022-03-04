@@ -5,12 +5,14 @@ variable "name" {
 
 variable "fqdn" {
   type        = string
-  description = "The Full Qualified Domain Name of your DNS zone."
+  description = "The Full Qualified Domain Name of your DNS zone. If not provided implies that the zone already exist."
 
   validation {
-    condition     = can(regex("^([a-zA-Z0-9. _-])+\\.+$", var.fqdn))
+    condition     = can(regex("^([a-zA-Z0-9. _-])+\\.+$", var.fqdn)) || var.fqdn == ""
     error_message = "Error: your FQDN input is invalid. Please check you didn't forget the final '.' at the end."
   }
+
+  default = ""
 }
 
 variable "public" {
@@ -27,4 +29,5 @@ variable "records" {
     ttl     = number
   }))
   description = "List of your DNS records."
+  default     = {}
 }
