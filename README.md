@@ -70,7 +70,8 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_zone_id"></a> [zone\_id](#output\_zone\_id) | ID of the deployed DNS zone. |
+| <a name="output_dns_managed_zone_id"></a> [dns\_managed\_zone\_id](#output\_dns\_managed\_zone\_id) | ID of the deployed DNS zone. |
+| <a name="output_dns_managed_zone_ns"></a> [dns\_managed\_zone\_ns](#output\_dns\_managed\_zone\_ns) | Delegate your managed\_zone to these virtual name servers. |
 <!-- END_TF_DOCS -->
 
 ## License
