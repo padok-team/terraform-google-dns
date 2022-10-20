@@ -8,6 +8,9 @@ provider "google" {
 
 module "simple_public_zone" {
   source = "../.."
+
+  project_id = "padok-cloud-factory"
+
   name   = "padok-simple-public-zone"
   fqdn   = "test.library.padok.fr."
   records = {
