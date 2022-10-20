@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/padok-team/terraform-google-dns/compare/v1.3.1...v1.4.0) (2022-10-20)
+
+
+### Features
+
+* add project_id variable ([d71a097](https://github.com/padok-team/terraform-google-dns/commit/d71a097ffc61b4ae4b0b93589975bbde397930eb))
+
 ## 1.1.0 (2022-01-14)
 
 
