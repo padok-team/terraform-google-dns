@@ -2,6 +2,8 @@
 resource "google_dns_managed_zone" "this" {
   count = var.fqdn != "" ? 1 : 0
 
+  project = var.project_id
+
   name     = var.name
   dns_name = var.fqdn
 
@@ -21,6 +23,8 @@ locals {
 # Create DNS records
 resource "google_dns_record_set" "this" {
   for_each = var.records
+
+  project = var.project_id
 
   # Required
   managed_zone = local.dns_managed_zone.name

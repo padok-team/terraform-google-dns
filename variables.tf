@@ -3,6 +3,12 @@ variable "name" {
   description = "Name of your DNS zone."
 }
 
+variable "project_id" {
+  description = "The project ID to manage the DNS resources."
+  type        = string
+}
+
+
 variable "fqdn" {
   type        = string
   description = "The Full Qualified Domain Name of your DNS zone. If not provided implies that the zone already exist."
