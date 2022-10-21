@@ -14,6 +14,9 @@ You can determine if it will be public or private and a list of your DNS records
 ```hcl
 module "simple_public_zone" {
   source = "git@github.com:padok-team/terraform-google-dns.git?ref=1.4.0"
+
+  project_id = "my-awesome-project"
+
   name   = "padok-simple-public-zone"
   fqdn   = "test.library.padok.fr."
   public = true
