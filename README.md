@@ -13,7 +13,7 @@ You can determine if it will be public or private and a list of your DNS records
 
 ```hcl
 module "simple_public_zone" {
-  source = "git@github.com:padok-team/terraform-google-dns.git?ref=1.4.0"
+  source = "git@github.com:padok-team/terraform-google-dns.git?ref=v1.4.0"
 
   project_id = "my-awesome-project"
 
