@@ -13,7 +13,7 @@ You can determine if it will be public or private and a list of your DNS records
 
 ```hcl
 module "simple_public_zone" {
-  source = "git@github.com:padok-team/terraform-google-dns.git?ref=1.4.0"
+  source = "git@github.com:padok-team/terraform-google-dns.git?ref=v1.4.0"
 
   project_id = "my-awesome-project"
 
@@ -65,6 +65,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_name"></a> [name](#input\_name) | Name of your DNS zone. | `string` | n/a | yes |
+| <a name="input_project_id"></a> [project\_id](#input\_project\_id) | The project ID to manage the DNS resources. | `string` | n/a | yes |
 | <a name="input_fqdn"></a> [fqdn](#input\_fqdn) | The Full Qualified Domain Name of your DNS zone. If not provided implies that the zone already exist. | `string` | `""` | no |
 | <a name="input_public"></a> [public](#input\_public) | Visibility of your zone. | `bool` | `true` | no |
 | <a name="input_records"></a> [records](#input\_records) | List of your DNS records. | <pre>map(object({<br>    name    = string<br>    type    = string<br>    rrdatas = list(string)<br>    ttl     = number<br>  }))</pre> | `{}` | no |
@@ -73,8 +74,8 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_dns_managed_zone_id"></a> [dns\_managed\_zone\_id](#output\_dns\_managed\_zone\_id) | ID of the deployed DNS zone. |
-| <a name="output_dns_managed_zone_ns"></a> [dns\_managed\_zone\_ns](#output\_dns\_managed\_zone\_ns) | Delegate your managed\_zone to these virtual name servers. |
+| <a name="output_managed_zone_id"></a> [managed\_zone\_id](#output\_managed\_zone\_id) | ID of the deployed DNS zone. |
+| <a name="output_managed_zone_ns"></a> [managed\_zone\_ns](#output\_managed\_zone\_ns) | Delegate your managed\_zone to these virtual name servers. |
 <!-- END_TF_DOCS -->
 
 ## License
