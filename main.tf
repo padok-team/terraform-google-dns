@@ -8,6 +8,11 @@ resource "google_dns_managed_zone" "this" {
   dns_name = var.fqdn
 
   visibility = var.public ? "public" : "private"
+
+  // Add the dnssec_config block to enable DNSSEC for the managed zone
+  dnssec_config {
+    state = "on"
+  }
 }
 
 data "google_dns_managed_zone" "this" {
