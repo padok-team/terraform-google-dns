@@ -51,6 +51,8 @@ module "simple_public_zone" {
 
 ## Examples
 
+All examples are in the examples folder:
+
 - [Example of simple public zone](examples/simple_public_zone/main.tf)
 - [Example of simple private zone](examples/simple_private_zone/main.tf)
 - [Example of public zone and record created separatly](examples/separated_zone_record/main.tf)
