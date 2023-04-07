@@ -28,7 +28,7 @@ resource "google_dns_record_set" "this" {
 
   # Required
   managed_zone = local.dns_managed_zone.name
-  name         = each.value.name != "" ? "${each.value.name}.${local.dns_managed_zone.dns_name}" : "${local.dns_managed_zone.dns_name}"
+  name         = each.value.name != "" ? format("%s.%s", each.value.name, local.dns_managed_zone.dns_name) : local.dns_managed_zone.dns_name
   type         = each.value.type
   rrdatas      = each.value.rrdatas
 
