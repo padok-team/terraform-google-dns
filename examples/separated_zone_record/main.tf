@@ -9,7 +9,7 @@ provider "google" {
 module "no_record_zone" {
   source = "../.."
 
-  project = "padok-cloud-factory"
+  project_id = "padok-cloud-factory"
 
   name = "padok-no-record-public-zone"
   fqdn = "no.record.library.padok.fr."
