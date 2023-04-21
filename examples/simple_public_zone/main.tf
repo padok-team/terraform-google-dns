@@ -11,8 +11,8 @@ module "simple_public_zone" {
 
   project_id = "padok-cloud-factory"
 
-  name   = "padok-simple-public-zone"
-  fqdn   = "test.library.padok.fr."
+  name = "padok-simple-public-zone"
+  fqdn = "test.library.padok.fr."
   records = {
     "rec1" = {
       name    = "www"

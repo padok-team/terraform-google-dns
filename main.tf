@@ -8,6 +8,12 @@ resource "google_dns_managed_zone" "this" {
   dns_name = var.fqdn
 
   visibility = var.public ? "public" : "private"
+
+  // CKV_GCP_16:
+  // DNSSEC is a feature of the Domain Name System that authenticates responses to domain name lookups. DNSSEC prevents attackers from manipulating or poisoning the responses to DNS requests.
+  dnssec_config {
+    state = "on"
+  }
 }
 
 data "google_dns_managed_zone" "this" {
@@ -28,7 +34,7 @@ resource "google_dns_record_set" "this" {
 
   # Required
   managed_zone = local.dns_managed_zone.name
-  name         = each.value.name != "" ? "${each.value.name}.${local.dns_managed_zone.dns_name}" : "${local.dns_managed_zone.dns_name}"
+  name         = each.value.name != "" ? format("%s.%s", each.value.name, local.dns_managed_zone.dns_name) : local.dns_managed_zone.dns_name
   type         = each.value.type
   rrdatas      = each.value.rrdatas
 
