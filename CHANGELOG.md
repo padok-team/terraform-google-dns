@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.1](https://github.com/padok-team/terraform-google-dns/compare/v1.4.0...v1.4.1) (2023-04-21)
+
+
+### Bug Fixes
+
+* add dnssec config block to enable DNSSEC for managed zones ([fabb1c6](https://github.com/padok-team/terraform-google-dns/commit/fabb1c63410b33b506a1ebd299951b2b24357d14))
+* **ex1:** Fixed separated_zone_record example ([e906076](https://github.com/padok-team/terraform-google-dns/commit/e9060764a3ca7e0a5ccc8d073d3f4fa7c5c1b841))
+* **ex2:** Fixed output from simple_private_zone example ([25e2843](https://github.com/padok-team/terraform-google-dns/commit/25e284379290f2392d47c996c86ec3eb36f36f15))
+* **ex3:** Fixed output for simple_public_zone example ([271850c](https://github.com/padok-team/terraform-google-dns/commit/271850c8ca9522bc0a40998c66f882cddb933cb3))
+
 ## [1.4.0](https://github.com/padok-team/terraform-google-dns/compare/v1.3.1...v1.4.0) (2022-10-20)
 
 
