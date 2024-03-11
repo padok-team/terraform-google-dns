@@ -39,7 +39,7 @@ variable "records" {
 }
 
 variable "dnssec_state" {
-  type = string
+  type        = string
   description = "DNSSEC State"
-  default = "on"
+  default     = "on"
 }
