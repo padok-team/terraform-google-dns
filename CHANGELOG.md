@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/padok-team/terraform-google-dns/compare/v1.4.1...v1.5.0) (2024-03-11)
+
+
+### Features
+
+* allow to disable dnssec ([#34](https://github.com/padok-team/terraform-google-dns/issues/34)) ([6c793a4](https://github.com/padok-team/terraform-google-dns/commit/6c793a4e6f2a24e58724619278fc3e2f04b61ee1))
+
 ## [1.4.1](https://github.com/padok-team/terraform-google-dns/compare/v1.4.0...v1.4.1) (2023-04-21)
 
 
