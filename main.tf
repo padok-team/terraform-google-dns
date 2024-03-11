@@ -12,7 +12,7 @@ resource "google_dns_managed_zone" "this" {
   // CKV_GCP_16:
   // DNSSEC is a feature of the Domain Name System that authenticates responses to domain name lookups. DNSSEC prevents attackers from manipulating or poisoning the responses to DNS requests.
   dnssec_config {
-    state = "on"
+    state = var.dnssec_state
   }
 }
 
