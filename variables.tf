@@ -37,3 +37,9 @@ variable "records" {
   description = "List of your DNS records."
   default     = {}
 }
+
+variable "dnssec_state" {
+  type = string
+  description = "DNSSEC State"
+  default = "on"
+}
